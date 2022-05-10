@@ -19,7 +19,12 @@ public class Array1
     /// </summary>
     public bool FirstLast6(int[] nums)
     {
-        throw new NotImplementedException();
+        int first = nums[0];
+
+        int lastIndex = nums.Length - 1;
+        int last = nums[lastIndex];
+
+        return first == 6 || last == 6;
     }
 
     /// <summary>
@@ -32,7 +37,15 @@ public class Array1
     /// </summary>
     public bool SameFirstLast(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums.Length == 0)
+        {
+            return false;
+        }
+        int firstElement = nums[0];
+        int lastIndex = nums.Length - 1;
+        int lastElement = nums[lastIndex];
+
+        return firstElement == lastElement;
     }
 
     /// <summary>
@@ -42,7 +55,7 @@ public class Array1
     /// </summary>
     public int[] MakePi()
     {
-        throw new NotImplementedException();
+        return new int[] { 3, 1, 4 };
     }
 
     /// <summary>
@@ -54,8 +67,8 @@ public class Array1
     /// commonEnd([1, 2, 3], [1, 3]) → true
     /// </summary>
     public bool CommonEnd(int[] a, int[] b)
-    {
-        throw new NotImplementedException();
+    {   
+        return a[0] == b[0] || a[a.Length - 1] == b[b.Length - 1];
     }
 
     /// <summary>
@@ -67,7 +80,16 @@ public class Array1
     /// </summary>
     public int Sum3(int[] nums)
     {
-        throw new NotImplementedException();
+        //return nums[0] + nums[1] + nums [2];
+
+        int sum = 0;
+
+        foreach (int num in nums)
+        {
+            sum = sum + num;
+        }
+
+        return sum;
     }
 
     /// <summary>
@@ -80,7 +102,7 @@ public class Array1
     /// </summary>
     public int[] RotateLeft3(int[] nums)
     {
-        throw new NotImplementedException();
+        return new int[] { nums[1], nums[2], nums[0] };
     }
 
     /// <summary>
@@ -93,7 +115,7 @@ public class Array1
     /// </summary>
     public int[] Reverse3(int[] nums)
     {
-        throw new NotImplementedException();
+        return new int[] { nums[2], nums[1], nums[0] };
     }
 
     /// <summary>
@@ -106,7 +128,21 @@ public class Array1
     /// </summary>
     public int[] MaxEnd3(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums[0] >= nums[nums.Length - 1])
+        {
+            nums[0] = nums[0];
+            nums[1] = nums[0];
+            nums[2] = nums[0];
+        }
+
+        if (nums[0] <= nums[nums.Length - 1])
+        {
+            nums[0] = nums[nums.Length - 1];
+            nums[1] = nums[nums.Length - 1];
+            nums[2] = nums[nums.Length - 1];
+        }
+
+        return new int[] { nums[0], nums[1], nums[2] };
     }
 
     /// <summary>
@@ -120,7 +156,17 @@ public class Array1
     /// </summary>
     public int Sum2(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums.Length == 0)
+        {
+            return 0;
+        }
+
+        if (nums.Length < 2)
+        {
+            return nums[0];
+        }
+
+        return nums[0] + nums[1];
     }
 
     /// <summary>
@@ -133,7 +179,7 @@ public class Array1
     /// </summary>
     public int[] MiddleWay(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        return new int[] { a[1], b[1] };   
     }
 
     /// <summary>
@@ -146,7 +192,7 @@ public class Array1
     /// </summary>
     public int[] MakeEnds(int[] nums)
     {
-        throw new NotImplementedException();
+        return new int[] { nums[0], nums[nums.Length - 1] };
     }
 
     /// <summary>
@@ -158,7 +204,12 @@ public class Array1
     /// </summary>
     public bool Has23(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums[0] == 2 || nums[0] == 3 || nums[1] == 2 || nums[1] == 3)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     /// <summary>
@@ -170,7 +221,12 @@ public class Array1
     /// </summary>
     public bool No23(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums[0] == 2 || nums[0] == 3 || nums[1] == 2 || nums[1] == 3)
+        {
+            return false;
+        }
+
+        return true;
     }
 
     /// <summary>
@@ -184,7 +240,10 @@ public class Array1
     /// </summary>
     public int[] MakeLast(int[] nums)
     {
-        throw new NotImplementedException();
+        int[] num = new int[nums.Length * 2];
+        num[nums.Length * 2 - 1] = nums[nums.Length - 1];
+           
+        return num;
     }
 
     /// <summary>
@@ -197,7 +256,17 @@ public class Array1
     /// </summary>
     public bool Double23(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums.Length == 1 || nums.Length == 0)
+        {
+            return false;
+        }
+
+        if (nums[0] == 2 && nums[1] == 2 || nums[0] == 3 && nums[1] == 3)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     /// <summary>
@@ -210,7 +279,17 @@ public class Array1
     /// </summary>
     public int[] Fix23(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums[0] == 2 && nums[1] == 3)
+        { 
+            nums[1] = 0;
+        }
+
+        if (nums[1] == 2 && nums[2] == 3)
+        {
+            nums[2] = 0;
+        }
+
+        return new int[] { nums[0], nums[1], nums[2] };
     }
 
     /// <summary>
@@ -223,7 +302,20 @@ public class Array1
     /// </summary>
     public int Start1(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        int count = 0;
+
+        if (a.Length != 0 && a[0] == 1)
+        {  
+            count++;
+        }
+        
+        if (b.Length != 0 && b[0] == 1)
+        {
+            count++;
+        }
+
+
+        return count;
     }
 
     /// <summary>
@@ -236,7 +328,12 @@ public class Array1
     /// </summary>
     public int[] BiggerTwo(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        if (a[0] + a[1] < b[0] + b[1])
+        {
+            return b;
+        }
+
+        return a;
     }
 
     /// <summary>
@@ -249,7 +346,7 @@ public class Array1
     /// </summary>
     public int[] MakeMiddle(int[] nums)
     {
-        throw new NotImplementedException();
+        return new int[] { nums[nums.Length / 2 - 1], nums[nums.Length / 2] };
     }
 
     /// <summary>
@@ -262,7 +359,7 @@ public class Array1
     /// </summary>
     public int[] PlusTwo(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        return new int[] { a[0], a[1], b[0], b[1] };
     }
 
     /// <summary>
@@ -275,7 +372,12 @@ public class Array1
     /// </summary>
     public int[] SwapEnds(int[] nums)
     {
-        throw new NotImplementedException();
+        int a = nums[0];
+        int b = nums[nums.Length - 1];
+        nums[0] = b;
+        nums[nums.Length - 1] = a;
+
+        return nums;
     }
 
     /// <summary>
