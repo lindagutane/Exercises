@@ -17,7 +17,16 @@ public class Array2
     /// </summary>
     public int CountEvens(int[] nums)
     {
-        throw new NotImplementedException();
+        int even = 0;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] % 2 == 0)
+            {
+                even++;
+            }
+        }
+
+        return even;
     }
 
     /// <summary>
@@ -31,7 +40,16 @@ public class Array2
     /// </summary>
     public int BigDiff(int[] nums)
     {
-        throw new NotImplementedException();
+        int minValue = nums[0];
+        int maxValue = nums[0];
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            minValue = Math.Min(minValue, nums[i]);
+            maxValue = Math.Max(maxValue, nums[i]);
+        }
+
+        return maxValue - minValue;
     }
 
     /// <summary>
@@ -47,7 +65,7 @@ public class Array2
     /// </summary>
     public int CenteredAverage(int[] nums)
     {
-        throw new NotImplementedException();
+        return nums[0];
     }
 
     /// <summary>
@@ -61,7 +79,21 @@ public class Array2
     /// </summary>
     public int Sum13(int[] nums)
     {
-        throw new NotImplementedException();
+        int sum = 0;
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] != 13)
+            {
+                sum += nums[i];
+
+                if (i > 0 && nums[i - 1] == 13)
+                {
+                    sum -= nums[i];
+                }
+            }
+        }
+
+        return sum;
     }
 
     /// <summary>
@@ -99,7 +131,17 @@ public class Array2
     /// </summary>
     public bool Lucky13(int[] nums)
     {
-        throw new NotImplementedException();
+        bool result = true;
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] == 1 || nums[i] == 3)
+            {
+                result = false;
+            }
+        }
+        
+        return result;
     }
 
     /// <summary>
